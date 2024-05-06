@@ -1,0 +1,103 @@
+import numpy as np
+
+# 1. Create an array of 10 zeros
+array_zeros = np.zeros(10)
+
+# 2. Create an array of 10 fives
+array_fives = np.ones(10) * 5
+
+# 3. Create an array of the integers from 10 to 50
+array_integers = np.arange(10, 51)
+
+# 4. Create an array of all the even integers from 10 to 50
+array_even = np.arange(10, 51, 2)
+
+# 5. Create a 3x3 matrix with values ranging from 0 to 8
+matrix_3x3 = np.arange(9).reshape(3, 3)
+
+# 6. Create a 3x3 identity matrix
+identity_matrix = np.eye(3)
+
+# 7. Use NumPy to generate a random number between 0 and 1
+random_number = np.random.rand()
+
+# 8. Use NumPy to generate an array of 25 random numbers
+random_array = np.random.rand(25)
+
+# 9. Create an array of 20 linearly spaced points between 0 and 1
+linear_array = np.linspace(0, 1, 20)
+
+# 10. Convert a 1D array to a 2D array with 2 rows
+array_2d = np.arange(10).reshape(2, -1)
+
+# 11. Multiply a 5x3 matrix by a 3x2 matrix
+result_matrix = np.dot(np.ones((5,3)), np.ones((3,2)))
+
+# 12. Extract all odd numbers from an array of 1-10
+odd_numbers = np.arange(1, 11, 2)
+
+# 13. Replace all odd numbers in an array of 1-10 with -1
+array_replace = np.arange(1, 11)
+array_replace[array_replace % 2 == 1] = -1
+
+# 14. Convert a 1D array to a boolean array where all positive values become True
+boolean_array = np.arange(-5, 6) > 0
+
+# 15. Replace all even numbers in a 1D array with their negative
+array_negative = np.arange(1, 11) * (-1) ** np.arange(1, 11)
+
+# 16. Calculate the sum of the diagonal elements of a 3x3 matrix
+sum_diagonal = np.trace(matrix_3x3)
+
+# 17. Find the indices of non-zero elements from [1,2,0,0,4,0]
+non_zero_indices = np.nonzero([1,2,0,0,4,0])
+
+# 18. Reverse a 1D array (first element becomes the last)
+reversed_array = np.arange(10)[::-1]
+
+# 19. Reshape a 1D array to a 2D array with 5 rows and 2 columns
+reshaped_array = np.arange(10).reshape(5, 2)
+
+# 20. Stack two arrays vertically
+stacked_arrays = np.vstack((np.arange(10).reshape(2, 5), np.arange(10, 20).reshape(2, 5)))
+
+# 21. Get the common items between two arrays
+common_items = np.intersect1d(np.arange(10), np.arange(5, 15))
+
+# 22. Create a 5x5 matrix with row values ranging from 0 to 4
+matrix_5x5 = np.zeros((5, 5)) + np.arange(5)
+
+# 23. Find the index of the maximum value in a 1D array
+max_index = np.argmax(np.random.rand(10))
+
+# 24. Find the mean of each row in a 2D array
+mean_rows = np.mean(np.arange(10).reshape(2, 5), axis=1)
+
+# 25. Create a random 4x4 matrix and extract the diagonal elements
+random_matrix = np.random.rand(4, 4)
+diagonal_elements = np.diag(random_matrix)
+
+# 26. Count the number of occurrences of a specific value in an array
+count_occurrences = np.count_nonzero(np.random.randint(0, 10, 100) == 5)
+
+# 27. Find the indices where elements of two arrays match
+matching_indices = np.where(np.random.rand(10) == np.random.rand(10))
+
+# 28. Compute the matrix multiplication of two 2D arrays
+matrix_multiply = np.dot(np.random.rand(3, 2), np.random.rand(2, 3))
+
+# 29. Generate an array R from array Z
+Z = np.arange(1, 15)
+R = Z.reshape(11, 4)
+
+# 30. Create a txt file with numerical data and read it into an array of shape (3, 9)
+np.savetxt('data.txt', np.random.rand(3, 9))
+data_array = np.loadtxt('data.txt').reshape(3, 9)
+
+# 31. Create a random 3x3 matrix and replace all values greater than 0.5 with 1 and all others with 0
+random_matrix = np.random.rand(3, 3)
+binary_matrix = np.where(random_matrix > 0.5, 1, 0)
+
+# 32. Create a 2D array with random values and replace the maximum value with the minimum
+random_array = np.random.rand(3, 3)
+random_array[random_array == np.max(random_array)] = np.min(random_array)
